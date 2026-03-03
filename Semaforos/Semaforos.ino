@@ -64,7 +64,7 @@ void loop()
 }
 
 void blinkSemaphors(){
-  for(int i = 0 ; i < BLINKS ; i++){
+  for(int i = 0 ; i < BLINKS ; i++) {
   	digitalWrite(YELLOW_1, HIGH);
     digitalWrite(YELLOW_2, HIGH);
     delay(DELAY);

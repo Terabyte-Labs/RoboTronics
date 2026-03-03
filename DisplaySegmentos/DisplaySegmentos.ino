@@ -1,11 +1,5 @@
-/**
-  Programa que controla un display de 7 segmentos catado comun (-)
-
-  Se definieron los segmentos como constantes para un facil manejo y referencia de los segmentos
-  Se creraron metodos de utilidad para activar y desactivar el segmento
-  Se creo otro metodo el cual desactiva todos los segmentos
-  
-*/
+// C++ code
+//
 const int SEGMENTO_A = 2;
 const int SEGMENTO_B = 3;
 const int SEGMENTO_C = 4;
@@ -13,7 +7,7 @@ const int SEGMENTO_D = 5;
 const int SEGMENTO_E = 6;
 const int SEGMENTO_F = 7;
 const int SEGMENTO_G = 8;
-const int DELAY = 1250;
+const int DELAY = 300;
 
 void setup()
 {
@@ -31,89 +25,70 @@ void setup()
 
 void loop()
 {
-  // 1
+  //0
   initSegments();
+  activateSegment(SEGMENTO_A);
   activateSegment(SEGMENTO_B);
   activateSegment(SEGMENTO_C);
+  activateSegment(SEGMENTO_D);
+  activateSegment(SEGMENTO_E);
+  activateSegment(SEGMENTO_F);
+  delay(DELAY);
+  
+  // 1
+  deActivateSegment(SEGMENTO_A);
+  deActivateSegment(SEGMENTO_D);
+  deActivateSegment(SEGMENTO_E);
+  deActivateSegment(SEGMENTO_F);
   delay(DELAY);
   
   // 2
-  initSegments();
   activateSegment(SEGMENTO_A);
-  activateSegment(SEGMENTO_B);
-  activateSegment(SEGMENTO_D);
-  activateSegment(SEGMENTO_E);
   activateSegment(SEGMENTO_G);
-  
+  activateSegment(SEGMENTO_E);
+  activateSegment(SEGMENTO_D);
+  deActivateSegment(SEGMENTO_C);
   delay(DELAY);
   
   // 3
-  initSegments();
-  activateSegment(SEGMENTO_A);
-  activateSegment(SEGMENTO_B);
   activateSegment(SEGMENTO_C);
-  activateSegment(SEGMENTO_D);
   activateSegment(SEGMENTO_G);
-  
+  deActivateSegment(SEGMENTO_E);
   delay(DELAY);
   
   // 4
-  initSegments();
-  activateSegment(SEGMENTO_B);
-  activateSegment(SEGMENTO_C);
   activateSegment(SEGMENTO_F);
-  activateSegment(SEGMENTO_G);
-  
+  deActivateSegment(SEGMENTO_A);
+  deActivateSegment(SEGMENTO_D);
   delay(DELAY);
   
   // 5
-  initSegments();
   activateSegment(SEGMENTO_A);
-  activateSegment(SEGMENTO_C);
   activateSegment(SEGMENTO_D);
-  activateSegment(SEGMENTO_F);
-  activateSegment(SEGMENTO_G);
-  
+  deActivateSegment(SEGMENTO_B);
   delay(DELAY);
   
   // 6
-  initSegments();
-  activateSegment(SEGMENTO_A);
-  activateSegment(SEGMENTO_C);
-  activateSegment(SEGMENTO_D);
   activateSegment(SEGMENTO_E);
-  activateSegment(SEGMENTO_F);
-  activateSegment(SEGMENTO_G);
-  
   delay(DELAY);
   
   // 7
-  initSegments();
-  activateSegment(SEGMENTO_A);
   activateSegment(SEGMENTO_B);
-  activateSegment(SEGMENTO_C);
+  deActivateSegment(SEGMENTO_D);
+  deActivateSegment(SEGMENTO_E);
+  deActivateSegment(SEGMENTO_F);
+  deActivateSegment(SEGMENTO_G);
   delay(DELAY);
   
   // 8
-  initSegments();
-  activateSegment(SEGMENTO_A);
-  activateSegment(SEGMENTO_B);
-  activateSegment(SEGMENTO_C);
   activateSegment(SEGMENTO_D);
   activateSegment(SEGMENTO_E);
   activateSegment(SEGMENTO_F);
   activateSegment(SEGMENTO_G);
-  
   delay(DELAY);
   
   // 9
-  initSegments();
-  activateSegment(SEGMENTO_A);
-  activateSegment(SEGMENTO_B);
-  activateSegment(SEGMENTO_C);
-  activateSegment(SEGMENTO_D);
-  activateSegment(SEGMENTO_F);
-  activateSegment(SEGMENTO_G);
+  deActivateSegment(SEGMENTO_E);
   delay(DELAY);
 }
 

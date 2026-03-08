@@ -1,5 +1,6 @@
 /**
   Tinker card link: https://www.tinkercad.com/things/9PnfIPTdvQW-leddimmer
+  Author: Luis Enrique Gonzalez Hernandez
 */
 
 // Define pin numbers

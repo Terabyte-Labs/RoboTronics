@@ -3,6 +3,8 @@
   Author: Luis Enrique Gonzalez Hernandez
 */
 
+#include <math.h>
+
 // Define pin numbers
 const int potPin = A5; 
 const int ledPinUp = 9;  
@@ -17,27 +19,27 @@ void setup() {
 }
 
 void loop() {
+
   int sensorValue = analogRead(potPin);
 
-  // usando map
-  //int brightness   = map(sensorValue, 0, 1023, 0, 255);
-  //int brightness2 = map(sensorValue, 0, 1023, 255, 0);
-  
-  // usando regla de 3 no muy exacta
-  // We do a cast to lon to avoid overflow
-  int brightness  = (long)sensorValue * 255/1023;
+  // Normalizar el valor del ADC (0–1023 → 0.0–1.0)
+  float normalized = sensorValue / 1023.0;
+
+  // Gamma típica para percepción humana
+  float gamma = 2.2;
+
+  // Aplicar corrección gamma
+  int brightness  = (int)(pow(normalized, gamma) * 255.0);
   int brightness2 = 255 - brightness;
-  //usando shifts lo mas rapido
-  //int value = sensorValue>>2;
-  //int brightness  = value;
-  //int brightness2 = 255 - value;
 
-  sprintf(buffer, "The value sensed from potentiometer is: %d - brightness = %d, brightness2 = %d\n", sensorValue, brightness, brightness2);
+  sprintf(buffer,
+          "The value sensed from potentiometer is: %d - brightness = %d, brightness2 = %d\n",
+          sensorValue, brightness, brightness2);
+
   Serial.print(buffer);
-
 
   analogWrite(ledPinUp, brightness);
   analogWrite(ledPinDown, brightness2);
-  delay(500);
 
+  delay(500);
 }

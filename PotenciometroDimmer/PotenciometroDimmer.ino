@@ -24,6 +24,7 @@ void loop() {
   //int brightness2 = map(sensorValue, 0, 1023, 255, 0);
   
   // usando regla de 3 no muy exacta
+  // We do a cast to lon to avoid overflow
   int brightness  = (long)sensorValue * 255/1023;
   int brightness2 = 255 - brightness;
   //usando shifts lo mas rapido

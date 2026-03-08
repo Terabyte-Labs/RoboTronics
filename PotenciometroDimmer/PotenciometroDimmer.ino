@@ -1,3 +1,7 @@
+/**
+  Tinker card link: https://www.tinkercad.com/things/9PnfIPTdvQW-leddimmer
+*/
+
 // Define pin numbers
 const int potPin = A5; 
 const int ledPinUp = 9;  
